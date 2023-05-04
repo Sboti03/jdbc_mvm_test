@@ -1,16 +1,10 @@
 package hu.webvalto.ui;
 
-import hu.webvalto.database.DatabaseManager;
-import hu.webvalto.database.UserManager;
 import hu.webvalto.orm.crud.CrudRepositoryManager;
 import hu.webvalto.ui.colors.Color;
 import hu.webvalto.ui.colors.WriteOut;
 import hu.webvalto.user.User;
-import hu.webvalto.user.UserRepository;
-import lombok.Data;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.*;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;

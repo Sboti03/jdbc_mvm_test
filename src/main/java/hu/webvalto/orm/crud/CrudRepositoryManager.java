@@ -249,4 +249,5 @@ public class CrudRepositoryManager<T extends BaseEntity, ID> extends DatabaseCon
         }
         throw new IllegalArgumentException("No ID column found for entity: " + t.getClass().getSimpleName());
     }
+
 }

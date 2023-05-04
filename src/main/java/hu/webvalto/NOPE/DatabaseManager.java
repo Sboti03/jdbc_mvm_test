@@ -1,4 +1,4 @@
-package hu.webvalto.database;
+package hu.webvalto.NOPE;
 
 
 import hu.webvalto.BaseEntity;

@@ -1,10 +1,8 @@
-package hu.webvalto.database;
+package hu.webvalto.NOPE;
 
 import hu.webvalto.user.User;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserManager extends DatabaseManager<User> {
 
