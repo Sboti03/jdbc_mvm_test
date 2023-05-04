@@ -2,13 +2,13 @@ package hu.webvalto.user;
 
 
 import hu.webvalto.BaseEntity;
-import hu.webvalto.database.Column;
+import hu.webvalto.orm.annotation.Column;
+import hu.webvalto.orm.annotation.Entity;
+import hu.webvalto.orm.annotation.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Objects;
 
 @Data
 @AllArgsConstructor

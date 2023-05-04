@@ -1,8 +1,4 @@
-package hu.webvalto.user;
-
-import hu.webvalto.database.Column;
-import lombok.Data;
-import org.omg.CosNaming.IstringHelper;
+package hu.webvalto.orm.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

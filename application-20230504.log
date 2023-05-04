@@ -1,0 +1,57 @@
+2023-05-04 19:59:17.792 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:11:04.805 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:11:04.808 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:13:11.188 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:13:11.192 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:13:15.720 [main] ERROR hu.webvalto.ui.UiManager - Error while adding user!
+java.sql.SQLException: ORA-12541: Nem lehet kapcsolódni az adatbázishoz. Nincs figyelő %s helyen. (CONNECTION_ID=qtWKkSZpRpWifSzjGwmW3g==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1083) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:863) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1101) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:104) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:837) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:664) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_372]
+	at java.sql.DriverManager.getConnection(DriverManager.java:270) ~[?:1.8.0_372]
+	at hu.webvalto.orm.DatabaseConnector.createConnection(DatabaseConnector.java:11) ~[classes/:?]
+	at hu.webvalto.orm.crud.CrudRepositoryManager.save(CrudRepositoryManager.java:48) ~[classes/:?]
+	at hu.webvalto.ui.UiManager.addUser(UiManager.java:79) [classes/:?]
+	at hu.webvalto.ui.UiManager.startConsole(UiManager.java:48) [classes/:?]
+	at hu.webvalto.ui.UiManager.<init>(UiManager.java:30) [classes/:?]
+	at hu.webvalto.ui.StartUp.start(StartUp.java:6) [classes/:?]
+	at hu.webvalto.Main.main(Main.java:7) [classes/:?]
+Caused by: oracle.net.ns.NetException: ORA-12541: Nem lehet kapcsolódni az adatbázishoz. Nincs figyelő %s helyen. (CONNECTION_ID=qtWKkSZpRpWifSzjGwmW3g==)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:312) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:223) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:259) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1076) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:681) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:688) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:935) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:323) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.T4CConnection.connectSession(T4CConnection.java:2645) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:795) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	... 13 more
+2023-05-04 20:13:28.922 [main] INFO  hu.webvalto.ui.UiManager - Exiting console
+2023-05-04 20:14:06.428 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:14:06.431 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:14:57.263 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:14:57.275 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:25:22.989 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:25:22.992 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:25:26.300 [main] INFO  hu.webvalto.ui.UiManager - Exiting console
+2023-05-04 20:25:57.302 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:25:57.305 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:26:46.092 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:26:46.095 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:27:18.512 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:27:18.515 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:28:26.021 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:28:26.024 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:29:04.445 [main] INFO  hu.webvalto.ui.UiManager - Exiting console
+2023-05-04 20:35:59.290 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:35:59.293 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:37:29.547 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:37:29.550 [main] INFO  hu.webvalto.ui.UiManager - Starting console
+2023-05-04 20:38:02.495 [main] INFO  hu.webvalto.ui.UiManager - Initializing UiManager
+2023-05-04 20:38:02.498 [main] INFO  hu.webvalto.ui.UiManager - Starting console

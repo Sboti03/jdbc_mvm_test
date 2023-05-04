@@ -1,16 +1,11 @@
 package hu.webvalto.database;
 
 
-import com.sun.corba.se.spi.ior.ObjectKey;
 import hu.webvalto.BaseEntity;
-import hu.webvalto.user.User;
+import hu.webvalto.orm.annotation.Column;
 
 import java.lang.reflect.Field;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 public class DatabaseManager<T extends BaseEntity> {
 

@@ -1,4 +1,4 @@
-package hu.webvalto.database;
+package hu.webvalto.orm.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
