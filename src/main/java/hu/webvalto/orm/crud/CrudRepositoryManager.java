@@ -57,7 +57,7 @@ public class CrudRepositoryManager<T extends BaseEntity, ID> extends DatabaseCon
     }
 
 
-    private String getTableName(T entity) {
+    protected String getTableName(T entity) {
         String tableName = entity.getClass().getSimpleName();
         if (clazz.isAnnotationPresent(Entity.class)) {
             if (!clazz.getAnnotation(Entity.class).name().isEmpty()) {
@@ -67,7 +67,7 @@ public class CrudRepositoryManager<T extends BaseEntity, ID> extends DatabaseCon
         return tableName;
     }
 
-    private Map<String, Object> getColumnNamesAndValues(T entity) throws IntrospectionException, IllegalAccessException, InvocationTargetException {
+    protected Map<String, Object> getColumnNamesAndValues(T entity) throws IntrospectionException, IllegalAccessException, InvocationTargetException {
         Field[] fields = entity.getClass().getDeclaredFields();
         Map<String, Object> columnValues = new HashMap<>();
         for (Field field : fields) {
@@ -199,7 +199,18 @@ public class CrudRepositoryManager<T extends BaseEntity, ID> extends DatabaseCon
         }
     }
 
-    private Optional<T> mapResultSetToEntity(ResultSet resultSet) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, SQLException, IntrospectionException {
+    @Override
+    public Optional<T> findBy(T entity) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<T> findBy(FindOptions findOptions) {
+        List<FindOption> options = findOptions.getOptions();
+        return Optional.empty();
+    }
+
+    protected Optional<T> mapResultSetToEntity(ResultSet resultSet) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, SQLException, IntrospectionException {
         T entity = clazz.getConstructor().newInstance();
         Field[] fields = clazz.getDeclaredFields();
         for (Field field : fields) {
@@ -212,7 +223,8 @@ public class CrudRepositoryManager<T extends BaseEntity, ID> extends DatabaseCon
                 }
                 Object value = resultSet.getObject(columnName);
                 if (value != null) {
-                    if (field.getType() == String.class) {
+                    Class<?> type = field.getType();
+                    if (type == String.class) {
                         field.set(entity, value.toString());
                     } else if (field.getType() == Integer.class) {
                         field.set(entity, ((Number) value).intValue());
@@ -233,7 +245,7 @@ public class CrudRepositoryManager<T extends BaseEntity, ID> extends DatabaseCon
         return Optional.of(entity);
     }
 
-    private String getIdColumnName(T t) {
+    protected String getIdColumnName(T t) {
         Field[] fields = t.getClass().getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
@@ -249,5 +261,4 @@ public class CrudRepositoryManager<T extends BaseEntity, ID> extends DatabaseCon
         }
         throw new IllegalArgumentException("No ID column found for entity: " + t.getClass().getSimpleName());
     }
-
 }

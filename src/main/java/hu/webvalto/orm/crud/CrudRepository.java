@@ -18,7 +18,8 @@ public interface CrudRepository<T extends BaseEntity, ID> extends BaseSQL {
     boolean delete(T entity);
     boolean delete(ID id);
     Optional<T> findById(ID id);
-
+    Optional<T> findBy(T entity);
+    Optional<T> findBy(FindOptions findOptions);
 
 
 
